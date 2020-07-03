@@ -1,19 +1,10 @@
 # Dockerfile must start with a FROM instruction
 # FROM instruction specifies the Base Image from which you are building
 # FROM <image>[:<tag>]
-FROM ubuntu:16.04
+FROM ubuntu:18.04
 # Install bitcoind from PPA
 RUN apt-get update && \
- apt-get install -y  build-essential pkg-config libc6-dev m4 g++-multilib autoconf libtool ncurses-dev unzip git python zlib1g-dev wget bsdmainutils automake libboost-all-dev libssl-dev libprotobuf-dev protobuf-compiler libqt4-dev libqrencode-dev libdb++-dev ntp ntpdate vim software-properties-common curl libcurl4-gnutls-dev cmake clang screen htop
-
-RUN cd ~ && \
-  git clone https://github.com/nanomsg/nanomsg && \
-  cd nanomsg && \
-  cmake . -DNN_TESTS=OFF -DNN_ENABLE_DOC=OFF && \
-  make -j$(nproc) && \
-  make install && \
-  ldconfig  
-
+ apt-get install -y libevent-dev libboost-system-dev libboost-filesystem-dev libboost-chrono-dev libboost-program-options-dev libboost-test-dev libboost-thread-dev build-essential pkg-config libc6-dev m4 g++-multilib autoconf libtool ncurses-dev python-zmq zlib1g-dev wget curl bsdmainutils automake cmake clang libsodium-dev libcurl4-gnutls-dev libssl-dev git unzip python jq htop
 RUN cd ~ && \
   git clone https://github.com/VerusCoin/VerusCoin.git && \
   cd VerusCoin && \
