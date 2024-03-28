@@ -1,0 +1,14 @@
+services:
+  verusd:
+    build:
+      context: ./verusd
+    env_file:
+      - env.verus
+    command: verusd
+    ports:
+      - "27485"
+      - "27486"
+    volumes:
+      - ./data_dir:/root/.komodo/VRSC
+      - /home/${USER}/.zcash-params:/root/.zcash-params:ro
+

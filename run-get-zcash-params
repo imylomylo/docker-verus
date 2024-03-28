@@ -1,0 +1,4 @@
+#!/bin/bash
+wget https://raw.githubusercontent.com/VerusCoin/VerusCoin/master/zcutil/fetch-params.sh
+chmod +x fetch-params.sh
+./fetch-params.sh
