@@ -1,5 +1,5 @@
 FROM ubuntu:22.04 as builder
-ARG VERUS_VERSION=1.2.1-1
+ARG VERUS_VERSION=1.2.2-2
 WORKDIR /app
 RUN apt update && \
   apt install -y  wget unzip curl nano openssh-server ngrep tmux net-tools screen vim jq python3 python3-pip

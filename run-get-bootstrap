@@ -1,1 +1,1 @@
-docker-compose run -i -t verusd fetch-params
+docker-compose run -i -t verusd fetch-bootstrap
